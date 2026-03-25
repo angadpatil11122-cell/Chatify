@@ -1,0 +1,379 @@
+/* ============================================================
+
+ 
+
+   RESPONSIVE DESIGN SYSTEM (Upgraded for iPhone 12 Pro)
+
+ 
+
+   ============================================================ */
+
+ 
+
+ 
+
+ 
+
+/* 1. TABLETS & SMALL LAPTOPS (Max 1024px) */
+
+ 
+
+@media screen and (max-width: 1024px) {
+
+ 
+
+    .container {
+
+ 
+
+        padding: 40px 20px;
+
+ 
+
+    }
+
+ 
+
+   
+
+ 
+
+    .footer-container {
+
+ 
+
+        grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+
+ 
+
+        gap: 30px;
+
+ 
+
+    }
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+/* 2. LARGE PHONES & SMALL TABLETS (Max 768px) */
+
+ 
+
+@media screen and (max-width: 768px) {
+
+ 
+
+    /* Sign-in Box Fix: Removing the fixed 350px width */
+
+ 
+
+    .form-container {
+
+ 
+
+        width: 90% !important; /* Force it to stay within screen edges  */
+
+ 
+
+        max-width: 380px;
+
+ 
+
+        padding: 30px 20px;
+
+ 
+
+        margin: 0 auto;
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    /* Footer Stacking */
+
+ 
+
+    .pro-footer {
+
+ 
+
+        padding: 40px 20px; /* Reducing desktop padding [cite: 978] */
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    .footer-container {
+
+ 
+
+        grid-template-columns: 1fr; /* Single column layout for small screens  */
+
+ 
+
+        text-align: center;
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    /* Newsletter Box Fix */
+
+ 
+
+    .newsletter-box {
+
+ 
+
+        flex-direction: column; /* Stack input and button vertically [cite: 1010] */
+
+ 
+
+        gap: 10px;
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    .newsletter-box input,
+
+ 
+
+    .newsletter-box button {
+
+ 
+
+        width: 100%;
+
+ 
+
+        border-radius: 8px !important; /* Fix the joined-edge look on mobile */
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    /* Mobile Menu Toggle (Hamburger) */
+
+ 
+
+    .menu-btn {
+
+ 
+
+        display: block !important;
+
+ 
+
+        cursor: pointer;
+
+ 
+
+        z-index: 1001;
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    .nav-links {
+
+ 
+
+        position: fixed;
+
+ 
+
+        right: -100%; /* Hide menu off-screen */
+
+ 
+
+        top: 0;
+
+ 
+
+        width: 70%;
+
+ 
+
+        height: 100vh;
+
+ 
+
+        background: #1C1340;
+
+ 
+
+        flex-direction: column;
+
+ 
+
+        justify-content: center;
+
+ 
+
+        transition: 0.3s ease;
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    .nav-links.active {
+
+ 
+
+        right: 0; /* Slide in when active */
+
+ 
+
+    }
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+/* 3. SMALL PHONES (Max 480px - iPhone 12 Pro) */
+
+ 
+
+@media screen and (max-width: 480px) {
+
+ 
+
+    .title {
+
+ 
+
+        font-size: 24px; /* Slightly smaller header for mobile [cite: 662] */
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    .social-login {
+
+ 
+
+        flex-direction: column; /* Stack Google/FB buttons [cite: 1010] */
+
+ 
+
+        gap: 12px;
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    .social-btn {
+
+ 
+
+        width: 100%;
+
+ 
+
+        margin-left: 0 !important;
+
+ 
+
+    }
+
+ 
+
+ 
+
+ 
+
+    /* Ensure body allows scrolling */
+
+ 
+
+    html, body {
+
+ 
+
+        overflow-y: auto !important; /* Fixes "none" value in original code  */
+
+ 
+
+        height: auto !important;
+
+ 
+
+    }
+
+ 
+
+}
+
+ 
+
+ 
+
+ 

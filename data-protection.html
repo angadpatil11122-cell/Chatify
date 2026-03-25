@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Data Protection | Chatify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css"> 
+
+  <style>
+    /* General document styling */
+    .content-wrapper {
+      max-width: 850px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      min-height: 80vh;
+    }
+    .content-wrapper h1 {
+      color: #047857; /* Using a reassuring color for protection */
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .content-wrapper h2 {
+      color: #1f2937;
+      margin-top: 35px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .content-wrapper p, .content-wrapper ul {
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 15px;
+    }
+    .content-wrapper ul {
+      list-style-type: disc;
+      padding-left: 25px;
+    }
+    .commitment-point {
+        font-weight: 600;
+        color: #000;
+    }
+    .e2ee-highlight {
+        background-color: #d1fae5; /* Light green highlight */
+        padding: 15px;
+        border-left: 5px solid #047857;
+        margin: 20px 0;
+        font-weight: 600;
+    }
+    /* Responsive adjustment */
+    @media (max-width: 880px) {
+        .content-wrapper {
+            margin: 20px 10px;
+            padding: 15px;
+        }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="content-wrapper">
+
+    <h1>🛡️ Chatify Data Protection Commitment</h1>
+    <p>This document highlights Chatify's foundational commitments to protecting the privacy and security of your personal data, reinforcing the principles laid out in our full <a href="privacy-policy.html">Privacy Policy</a>.</p>
+
+    <hr>
+
+    <div class="e2ee-highlight">
+        Our core commitment is **End-to-End Encryption (E2EE)**. This cryptographic technology ensures that the content of your messages, calls, and files are only accessible to you and the recipient. **Chatify has no way to read or access your private communication content.**
+    </div>
+
+    <h2>1. Data Minimization and Collection</h2>
+    <p>We believe in collecting only the data absolutely necessary to provide a reliable E2EE service:</p>
+    <ul>
+      <li><span class="commitment-point">Minimal Metadata:</span> We only collect essential metadata, such as account usernames and message timestamps, which are necessary for routing and notification purposes.</li>
+      <li><span class="commitment-point">No Content Logging:</span> We do not store, log, or record the actual content of your E2EE communications.</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. Security Measures in Place</h2>
+    <p>We employ technical and organizational measures to safeguard your data against unauthorized access, alteration, or destruction:</p>
+    <ul>
+      <li><span class="commitment-point">Encryption at Rest and in Transit:</span> All data stored on our servers is protected, and all connections between your device and our servers are secured using **TLS 1.3**.</li>
+      <li><span class="commitment-point">Access Controls:</span> Access to unencrypted metadata is strictly controlled and limited to authorized personnel who require it for specific operational tasks.</li>
+      <li><span class="commitment-point">Hashed Passwords:</span> User passwords are never stored in plain text but are secured using industry-standard hashing algorithms.</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. Your Data Rights (GDPR / CCPA Principle)</h2>
+    <p>You maintain full control over your personal information stored by Chatify. This includes the right to:</p>
+    <ul>
+      <li><span class="commitment-point">Access:</span> Request a copy of the metadata we hold about your account.</li>
+      <li><span class="commitment-point">Rectification:</span> Correct any inaccurate profile information directly via the app settings.</li>
+      <li><span class="commitment-point">Erasure ("Right to be Forgotten"):</span> Delete your account and all associated metadata.</li>
+      <li><span class="commitment-point">Portability:</span> Receive your metadata in a structured, commonly used, and machine-readable format.</li>
+    </ul>
+    
+    <p style="text-align: center; margin-top: 40px; font-style: italic;">
+        For detailed information, including legal grounds for processing and data retention periods, please refer to our comprehensive <a href="privacy-policy.html">Privacy Policy</a>.
+    </p>
+
+  </div>
+  </body>
+</html>

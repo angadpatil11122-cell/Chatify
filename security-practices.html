@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Security Practices | Chatify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css"> 
+
+  <style>
+    /* Specific styles for the Security Practices page */
+    .content-wrapper {
+      max-width: 800px; 
+      margin: 40px auto; 
+      padding: 20px; 
+      background: #ffffff;
+      border-radius: 12px; 
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      min-height: 80vh; /* Ensure it takes up most of the page height */
+    }
+    .content-wrapper h1 { 
+      color: #2563eb; 
+      border-bottom: 2px solid #e5e7eb; 
+      padding-bottom: 10px; 
+      margin-bottom: 30px; 
+      text-align: center; 
+    }
+    .content-wrapper h2 { 
+      color: #1f2937; 
+      margin-top: 30px; 
+    }
+    .content-wrapper ul { 
+      list-style-type: disc; 
+      padding-left: 25px; 
+      margin-bottom: 20px; 
+    }
+    .content-wrapper p {
+        line-height: 1.7;
+        color: #4b5563;
+        margin-bottom: 15px;
+    }
+    .security-point { 
+      font-weight: 600; 
+      color: #000; 
+    }
+    /* Responsive adjustment */
+    @media (max-width: 820px) {
+        .content-wrapper {
+            margin: 20px 10px;
+            padding: 15px;
+        }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="content-wrapper">
+
+    <h1>🛡️ Chatify Security Practices</h1>
+
+    <p>We implement a defense-in-depth strategy to protect your data, ensuring our systems are robust against threats, complementary to our End-to-End Encryption (E2EE).</p>
+
+    <hr>
+
+    <h2>1. Data Protection and Access Control</h2>
+    <p>We limit access to unencrypted metadata and apply strict controls over all systems:</p>
+    <ul>
+      <li><span class="security-point">Server Security:</span> All data, including encrypted messages and unencrypted metadata (user IDs, timestamps), is stored on secure, access-controlled servers protected by firewalls and intrusion detection systems.</li>
+      <li><span class="security-point">Authentication:</span> We enforce strong, complex password requirements and support Multi-Factor Authentication (MFA) to prevent unauthorized account takeover.</li>
+      <li><span class="security-point">Operational Controls:</span> Internal access to production systems is strictly limited to authorized personnel using role-based access control (RBAC).</li>
+    </ul>
+
+    <hr>
+
+    <h2>2. Secure Development and Auditing</h2>
+    <p>Security is built into our product from the ground up, not added as an afterthought:</p>
+    <ul>
+      <li><span class="security-point">Secure Code Review:</span> All code changes impacting security or data handling undergo mandatory peer review and automated security scanning before deployment to identify vulnerabilities.</li>
+      <li><span class="security-point">Regular Audits:</span> We commission independent, third-party security experts to perform penetration tests and security audits annually to challenge our defenses.</li>
+      <li><span class="security-point">Dependencies Management:</span> We actively monitor and update all third-party libraries and frameworks to patch known vulnerabilities quickly.</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. Incident Response and Continuity</h2>
+    <p>We are prepared to handle security incidents quickly and transparently:</p>
+    <ul>
+        <li><span class="security-point">Incident Protocol:</span> Our trained team follows a strict, documented protocol to contain the threat, secure affected systems, and notify affected users in compliance with all legal requirements.</li>
+        <li><span class="security-point">Data Backup:</span> Encrypted data backups are performed regularly to ensure business continuity and quick recovery from disaster or failure.</li>
+    </ul>
+    
+    <p style="text-align: center; margin-top: 40px; font-style: italic;">
+        For information on reporting vulnerabilities, please read our <a href="responsible-disclosure.html">Responsible Disclosure Policy</a>.
+    </p>
+
+  </div>
+  </body>
+</html>

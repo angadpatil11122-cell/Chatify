@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Responsible Disclosure | Chatify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css"> 
+
+  <style>
+    /* Content styling, similar to the other security pages */
+    .content-wrapper {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      min-height: 80vh; 
+    }
+    .content-wrapper h1 {
+      color: #ef4444; /* Alert color for security policies */
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .content-wrapper h2 {
+      color: #1f2937;
+      margin-top: 30px;
+      border-bottom: 1px solid #f3f4f6;
+      padding-bottom: 5px;
+    }
+    .content-wrapper p, .content-wrapper ul {
+        line-height: 1.7;
+        color: #4b5563;
+        margin-bottom: 15px;
+    }
+    .content-wrapper ul {
+      list-style-type: disc;
+      padding-left: 25px;
+    }
+    .contact-method {
+      background-color: #f3f4f6;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .contact-method a {
+      font-weight: 700;
+      color: #2563eb;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+  </style>
+</head>
+<body>
+  <div class="content-wrapper">
+
+    <h1>⚠️ Chatify Responsible Disclosure Policy</h1>
+
+    <p>At **Chatify**, we value the work done by security researchers in improving the security of our services. We are committed to working with the community to address security issues responsibly.</p>
+
+    <hr>
+
+    <h2>1. How to Report a Vulnerability</h2>
+    <p>If you believe you have discovered a security vulnerability in Chatify, please report it to us immediately and confidentially via our dedicated security channel:</p>
+    
+    <div class="contact-method">
+        <p><strong>Email your detailed report to:</strong></p>
+        <a href="mailto:security@chatify.com">security@chatify.com</a>
+    </div>
+
+    <p>Please include a detailed description of the vulnerability, steps to reproduce it, and any necessary proof-of-concept code. We recommend using **PGP encryption** if the details of the vulnerability are highly sensitive.</p>
+
+    <hr>
+
+    <h2>2. Our Guidelines and Expectations</h2>
+    <p>We ask that researchers adhere to the following principles:</p>
+    <ul>
+        <li>**Do not** publicly disclose the vulnerability details (including on social media or public forums) until we have acknowledged the issue and had a reasonable time to fix it (typically 90 days).</li>
+        <li>**Do not** access, modify, or destroy user data. Always use test accounts for your research.</li>
+        <li>**Do not** engage in any activity that affects the stability of our service (e.g., Denial of Service, brute force attacks).</li>
+        <li>**Limit** the use of automated vulnerability scanners.</li>
+    </ul>
+
+    <hr>
+
+    <h2>3. Our Commitment to Researchers</h2>
+    <p>When you comply with this policy, we commit to:</p>
+    <ul>
+        <li>Providing prompt acknowledgment of your report within **3 business days**.</li>
+        <li>Working quickly to validate and remediate the vulnerability.</li>
+        <li>Expressing our gratitude, which may include public recognition on our security page (if desired) and a small reward or bounty, where applicable.</li>
+    </ul>
+    
+    <p style="text-align: center; margin-top: 40px; font-style: italic;">Thank you for helping keep Chatify secure for everyone.</p>
+
+  </div>
+
+  </body>
+</html>

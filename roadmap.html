@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Roadmap | Chatify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css"> 
+
+  <style>
+    /* General document styling */
+    .content-wrapper {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      min-height: 80vh;
+    }
+    .content-wrapper h1 {
+      color: #2563eb;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .content-wrapper h2 {
+      color: #1f2937;
+      margin-top: 35px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #f3f4f6;
+    }
+    .content-wrapper p, .content-wrapper ul {
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 15px;
+    }
+    .roadmap-section {
+        margin-top: 30px;
+    }
+    .roadmap-item {
+        border-left: 4px solid #f59e0b; /* Yellow/Orange for visibility */
+        padding: 15px 20px;
+        margin-bottom: 20px;
+        background-color: #fffbeb; /* Light background for the section */
+        border-radius: 0 8px 8px 0;
+    }
+    .roadmap-item h3 {
+        color: #f59e0b;
+        margin-top: 0;
+        font-size: 1.3em;
+    }
+    .roadmap-status {
+        font-weight: 700;
+        float: right;
+        padding: 4px 8px;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
+    .status-in-progress { background-color: #fde68a; color: #a16207; }
+    .status-planned { background-color: #e5e7eb; color: #4b5563; }
+    .status-complete { background-color: #d1fae5; color: #047857; }
+    /* Responsive adjustment */
+    @media (max-width: 920px) {
+        .content-wrapper {
+            margin: 20px 10px;
+            padding: 15px;
+        }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="content-wrapper">
+
+    <h1>🚀 Chatify Product Roadmap</h1>
+    <p>This roadmap is a high-level overview of the features and updates we are currently working on or planning for Chatify. Note that all dates and features are subject to change based on development progress and security reviews.</p>
+
+    <hr>
+
+    <h2>Q4 2025: Current Focus (In Progress)</h2>
+    <div class="roadmap-section">
+      <div class="roadmap-item">
+        <span class="roadmap-status status-in-progress">In Progress</span>
+        <h3>Multi-Device Login and Sync</h3>
+        <p>Allow users to seamlessly link and sync their Chatify account across multiple devices (Desktop, Web, Mobile) without compromising E2EE key security.</p>
+      </div>
+      <div class="roadmap-item">
+        <span class="roadmap-status status-in-progress">In Progress</span>
+        <h3>Encrypted Voice and Video Calls</h3>
+        <p>Implement E2EE for 1:1 voice and video communication, using secure WebRTC protocols to ensure privacy.</p>
+      </div>
+      <div class="roadmap-item">
+        <span class="roadmap-status status-in-progress">In Progress</span>
+        <h3>Enhanced Profile Customization</h3>
+        <p>Adding options for custom themes, chat bubble colors, and detailed "About Me" sections for user profiles.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Q1 2026: Planned Features</h2>
+    <div class="roadmap-section">
+      <div class="roadmap-item">
+        <span class="roadmap-status status-planned">Planned</span>
+        <h3>Group Chat E2EE</h3>
+        <p>Extend End-to-End Encryption support to group chats, ensuring robust key management for multiple participants.</p>
+      </div>
+      <div class="roadmap-item">
+        <span class="roadmap-status status-planned">Planned</span>
+        <h3>Desktop Application (Native)</h3>
+        <p>Launch dedicated native apps for Windows and macOS for a smoother, more integrated desktop experience.</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <h2>Recently Completed (Q3 2025)</h2>
+    <div class="roadmap-section">
+      <div class="roadmap-item">
+        <span class="roadmap-status status-complete">Completed</span>
+        <h3>End-to-End Encrypted File Transfer</h3>
+        <p>Securely transfer photos and documents up to 100MB using the E2EE protocol.</p>
+      </div>
+      <div class="roadmap-item">
+        <span class="roadmap-status status-complete">Completed</span>
+        <h3>Username-Based Search</h3>
+        <p>Implemented fast, unique username search to easily connect with friends.</p>
+      </div>
+    </div>
+
+    <p style="text-align: center; margin-top: 40px; font-style: italic;">
+        Your feedback drives our roadmap! Send feature requests to our <a href="mailto:support@chatify.com">support team</a>.
+    </p>
+
+  </div>
+  </body>
+</html>

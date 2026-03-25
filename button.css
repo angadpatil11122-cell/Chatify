@@ -1,0 +1,760 @@
+/* ===== GLOBAL LAYOUT RESET ===== */
+
+ 
+
+html, body {
+
+ 
+
+    height: 100%;
+
+ 
+
+    margin: 0;
+
+ 
+
+    padding: 0;
+
+ 
+
+    box-sizing: border-box; /*  */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+body {
+
+ 
+
+    display: flex; /* [cite: 9] */
+
+ 
+
+    flex-direction: column; /* [cite: 10] */
+
+ 
+
+    min-height: 100vh; /* [cite: 11] */
+
+ 
+
+    font-family: "Inter", sans-serif; /* [cite: 12, 37] */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.container {
+
+ 
+
+    display: flex; /* [cite: 16] */
+
+ 
+
+    justify-content: center; /* [cite: 17] */
+
+ 
+
+    align-items: center; /* [cite: 18] */
+
+ 
+
+    flex-grow: 1; /* [cite: 19] */
+
+ 
+
+    padding-top: 60px; /* [cite: 20] */
+
+ 
+
+    padding-bottom: 60px; /* [cite: 21] */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+/* ===== FOOTER MAIN WRAPPER ===== */
+
+ 
+
+.pro-footer {
+
+ 
+
+    background: #1C1340; /* [cite: 34] */
+
+ 
+
+    padding: 50px 40px;
+
+ 
+
+    border-top: 1px solid rgba(135, 120, 250, 0.3); /* [cite: 36] */
+
+ 
+
+    flex-shrink: 0; /* [cite: 38] */
+
+ 
+
+    color: #ffffff; /* [cite: 39] */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+/* WIDE LAYOUT FIX (Matches Image 1) */
+
+ 
+
+.footer-container {
+
+ 
+
+    display: grid; /* [cite: 43, 161] */
+
+ 
+
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* [cite: 162] */
+
+ 
+
+    gap: 40px; /* [cite: 45] */
+
+ 
+
+    max-width: 1400px;
+
+ 
+
+    margin: auto; /* [cite: 47, 165] */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.footer-col h4 {
+
+ 
+
+    font-size: 15px; /* [cite: 50] */
+
+ 
+
+    font-weight: 600; /* [cite: 51] */
+
+ 
+
+    margin-bottom: 15px; /* [cite: 52] */
+
+ 
+
+    color: #ffffff; /* [cite: 53] */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.footer-col a {
+
+ 
+
+    display: block; /* [cite: 56] */
+
+ 
+
+    font-size: 13px; /* [cite: 57] */
+
+ 
+
+    color: #c0c0ff; /* [cite: 58, 127] */
+
+ 
+
+    text-decoration: none; /* [cite: 59] */
+
+ 
+
+    margin: 6px 0; /* [cite: 60] */
+
+ 
+
+    transition: 0.2s; /* [cite: 61, 128] */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.footer-col a:hover {
+
+ 
+
+    color: #66CCFF; /* [cite: 64, 132] */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+/* ===== NEWSLETTER SECTION (SINGLE LINE FIX) ===== */
+
+ 
+
+.newsletter-box {
+
+ 
+
+    display: flex;
+
+ 
+
+    align-items: stretch;
+
+ 
+
+    margin-bottom: 10px;
+
+ 
+
+    gap: 8px; /* small gap between input and button */
+
+ 
+
+    flex-wrap: wrap; /* allow the button to wrap under the input on tight layouts */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.newsletter-box input {
+
+ 
+
+    flex: 1; /* [cite: 91] */
+
+ 
+
+    padding: 8px; /* [cite: 92] */
+
+ 
+
+    border: 1px solid #453A70; /* [cite: 94] */
+
+ 
+
+    background: #140e30; /* [cite: 95] */
+
+ 
+
+    border-right: none; /* [cite: 96] */
+
+ 
+
+    border-radius: 6px 0 0 6px; /* [cite: 97] */
+
+ 
+
+    color: #ffffff; /* [cite: 98] */
+
+ 
+
+    outline: none;
+
+ 
+
+    min-width: 0; /* allow flex child to shrink inside grid columns */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.newsletter-box button {
+
+ 
+
+    padding: 8px 14px; /* [cite: 101] */
+
+ 
+
+    border: 1px solid #755FFF; /* [cite: 103] */
+
+ 
+
+    background: #5031b2; /* [cite: 104] */
+
+ 
+
+    color: white; /* [cite: 105] */
+
+ 
+
+    cursor: pointer; /* [cite: 106] */
+
+ 
+
+    border-radius: 0 6px 6px 0; /* [cite: 107] */
+
+ 
+
+    transition: background 0.2s; /* [cite: 108] */
+
+ 
+
+    white-space: nowrap;
+
+ 
+
+    min-width: 0; /* allow flex child to shrink; prevents overflow in narrow grid columns */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+.newsletter-box button:hover {
+
+ 
+
+    background: #4120a2; /* [cite: 111] */
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+/* ===== CHECKBOX VISIBILITY FIX ===== */
+
+ 
+
+.check {
+
+ 
+
+    display: flex !important; /* Forces layout to horizontal */
+
+ 
+
+    align-items: center !important;
+
+ 
+
+    gap: 8px;
+
+ 
+
+    font-size: 12px; /* [cite: 114] */
+
+ 
+
+    color: #aaaaaa; /* [cite: 115] */
+
+ 
+
+    margin-top: 10px;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+/* Specific styling to ensure the checkbox 'box' is visible */
+
+ 
+
+.check input[type="checkbox"] {
+
+ 
+
+    appearance: checkbox !important; /* Ensures browser renders the box */
+
+ 
+
+    -webkit-appearance: checkbox !important;
+
+ 
+
+    width: 14px;
+
+ 
+
+    height: 14px;
+
+ 
+
+    margin: 0;
+
+ 
+
+    cursor: pointer;
+
+ 
+
+    display: inline-block !important; /* Prevents hidden status */
+
+ 
+
+    visibility: visible !important;
+
+ 
+
+}
+
+ 
+
+ 
+
+ 
+
+/* ===== FOOTER BOTTOM ===== */
+
+ 
+
+.footer-bottom {
+
+ 
+
+    text-align: center; /* [cite: 138] */
+
+ 
+
+    margin-top: 25px; /* [cite: 139] */
+
+ 
+
+    padding-top: 15px; /* [cite: 140] */
+
+ 
+
+    font-size: 13px; /* [cite: 141] */
+
+ 
+
+    color: #aaaaaa; /* [cite: 142] */
+
+ 
+
+    border-top: 1px solid rgba(135, 120, 250, 0.1); /* [cite: 143] */
+
+ 
+
+}
+
+ 
+
+/* ===== NAVBAR STYLES ===== */
+
+ 
+
+.navbar {
+
+    background: linear-gradient(135deg, #000000 0%, #0f172a 30%, #1a1f3a 65%, #2d1b69 100%);
+
+    padding: 5px 40px;
+
+    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.1);
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+ 
+
+.navbar-container {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 0;
+
+    width: 100%;
+
+}
+
+ 
+
+.navbar-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+   
+
+}
+
+ 
+
+.logo-icon {
+
+    width: 120px;
+
+    height: 70px;
+
+    flex-shrink: 0;
+
+    object-fit: contain;
+
+    padding-bottom:1px ;
+
+ 
+
+}
+
+ 
+
+.navbar-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+
+}
+
+ 
+
+.signin-btn {
+
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 24px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    font-family: 'Inter', sans-serif;
+
+}
+
+ 
+
+.signin-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+
+}
+
+ 
+
+.signin-btn:active {
+
+    transform: translateY(0);
+
+}
+
+ 
+
+.signup-btn {
+
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+
+    color: white;
+
+    border: none;
+
+    padding: 10px 24px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    font-family: 'Inter', sans-serif;
+
+}
+
+ 
+
+.signup-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+
+}
+
+ 
+
+.signup-btn:active {
+
+    transform: translateY(0);
+
+}
+
+ 
+
+/* ===== VIDEO SECTION STYLES ===== */
+
+ 
+
+.video-section {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background: transparent;
+
+}
+
+ 
+
+.video-section video {
+
+    max-width: 100%;
+
+    height: auto;
+
+    border-radius: 10px;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+
+    transition: transform 0.3s ease;
+
+}
+
+ 
+
+.video-section video:hover {
+
+    transform: scale(1.02);
+
+}
+
+ 
+
+ 
+
+ .block-btn{
+    padding:5px 14px;
+    font-size:13px;
+    border-radius:20px;
+    border:2px solid #00c853;   /* default green */
+    background:transparent;
+    color:#00c853;
+    cursor:pointer;
+    transition:all 0.3s ease;
+}
+
+/* BLOCKED STATE */
+.block-btn.blocked{
+    border-color:#ff4d4d;
+    color:#ff4d4d;
+}

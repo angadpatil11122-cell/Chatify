@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Encryption Details | ChatSphere</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css"> 
+
+  <style>
+    /* Specific styles for the Encryption Details page */
+    .content-wrapper {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    .content-wrapper h1 {
+      color: #2563eb;
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    .content-wrapper h2 {
+      color: #1f2937;
+      margin-top: 30px;
+    }
+    .content-wrapper p, .content-wrapper ul {
+      line-height: 1.7;
+      color: #4b5563;
+      margin-bottom: 15px;
+    }
+    .content-wrapper ul {
+      list-style-type: disc;
+      padding-left: 25px;
+    }
+    .encryption-tech {
+        background-color: #f3f4f6;
+        padding: 15px;
+        border-radius: 8px;
+        margin-top: 20px;
+    }
+    .encryption-tech h3 {
+        color: #ef4444;
+        margin-top: 0;
+    }
+    
+    /* Responsive adjustment */
+    @media (max-width: 820px) {
+        .content-wrapper {
+            margin: 20px 10px;
+            padding: 15px;
+        }
+    }
+  </style>
+
+</head>
+<body>
+  <div class="content-wrapper">
+
+    <h1>🔒 End-to-End Encryption Details</h1>
+
+    <p>At **ChatSphere**, your privacy and security are paramount. We use industry-leading End-to-End Encryption (E2EE) to ensure that only you and the recipient can read your messages. **Not even we, the service provider, can access the content of your communications.**</p>
+
+    <h2>1. The Core Mechanism: E2EE</h2>
+    <p>E2EE means that the message is encrypted on your device before it leaves, and it is only decrypted on the recipient's device. The encrypted data travels through our servers, but it remains indecipherable to us and anyone else who might intercept it.</p>
+    
+    <div class="encryption-tech">
+        <h3>Primary Cryptographic Protocols Used:</h3>
+        <ul>
+            <li>**Key Exchange:** We use the secure **Diffie-Hellman Key Exchange** protocol (or a similar modern protocol like the Signal Protocol's X3DH) to establish a unique, shared secret key between two users without ever transmitting the key itself.</li>
+            <li>**Symmetric Encryption:** All message content is encrypted using a powerful, fast symmetric cipher like **AES-256**. The secret key established in the key exchange is used for this step.</li>
+            <li>**Asymmetric Encryption (RSA/ECC):** User identity verification and secure key storage are handled by asymmetric encryption. Your private key is encrypted with your **login password** before being stored on our server, ensuring we cannot unlock it.</li>
+        </ul>
+    </div>
+
+    <h2>2. Data in Transit and at Rest</h2>
+    <p>We ensure multiple layers of protection:</p>
+    <ul>
+        <li>**Messages:** Messages are E2EE. They are stored on our servers in their encrypted, indecipherable form.</li>
+        <li>**Attachments:** Photos and files are encrypted using the same E2EE process and stored securely.</li>
+        <li>**Connection:** The connection between your device and our server is always secured with **TLS 1.3** (Transport Layer Security), preventing third-party eavesdropping on the encrypted data transfer.</li>
+    </ul>
+
+    <h2>3. What is NOT Encrypted (Metadata)</h2>
+    <p>While the **content** of your messages is private, our system must store certain non-encrypted metadata to function:</p>
+    <ul>
+        <li>**User Accounts:** Your email address, hashed password, and username.</li>
+        <li>**Connection Data:** Who you are talking to, and the timestamp of when the message was sent (but not the content).</li>
+        <li>**Profile Data:** Your display name and profile picture URL.</li>
+    </ul>
+    
+    <p style="text-align: center; margin-top: 40px; font-style: italic;">For more details, please refer to our <a href="security-practices.html">Security Practices</a> page.</p>
+
+  </div>
+
+  </body>
+</html>

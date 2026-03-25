@@ -1,0 +1,1249 @@
+ 
+
+ 
+
+<!DOCTYPE html>
+
+ 
+
+<html lang="en">
+
+ 
+
+<head>
+
+ 
+
+  <meta charset="UTF-8" />
+
+ 
+
+  <title>ChatSphere - Secure E2EE</title>
+
+ 
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+ 
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+ 
+
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+
+ 
+
+ <link rel="stylesheet" href="button.css">
+
+ 
+
+ <link rel="stylesheet" href="index.css">
+
+ 
+
+ <link rel="stylesheet" href="responsive.css">
+
+ 
+
+ 
+
+ 
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 
+
+   
+
+ 
+
+ 
+
+ 
+
+</head>
+
+ 
+
+<body>
+
+ 
+
+<div id="login-page" class="center">
+<!-- Navigation Bar -->
+<nav class="navbar">
+ <div class="navbar-container">
+   <div class="navbar-logo">
+     <img src="img/logo.png" alt="CHATIFY Logo" class="logo-icon">
+   </div>
+  <div class="navbar-right">
+    <button class="signin-btn hidden" id="navbar-signin-btn">Sign In</button>
+    <button class="signup-btn" id="navbar-signup-btn">Sign Up/Sign In</button>
+ </div>
+ </div>
+</nav>
+<div class="form-container hidden">
+  <p class="title" id="auth-title">Welcome back</p>
+ <form class="form" id="auth-form">
+  <input type="email" class="input" id="email-input" placeholder="Email">
+  <input type="password" class="input" id="password-input" placeholder="Password">
+ <input type="password" class="input hidden" id="confirm-password-input" placeholder="Confirm Password">
+ <input type="text" class="input hidden" id="username-input" placeholder="Unique Username (@example)"> <p class="page-link">
+   <span class="page-link-label" id="forgot-password-link">Forgot Password?</span>
+  </p>
+  <button type="submit" class="form-btn" id="auth-submit-btn">Log in</button>
+ </form>
+
+  <div id="email-verification-message" class="email-verification-message hidden">
+
+ 
+
+        <p id="email-verification-message-text"></p>
+
+ 
+
+        <button onclick="sendVerificationEmail()">Resend Verification Email</button>
+
+ 
+
+    </div>
+
+ 
+
+ 
+
+ 
+
+    <p class="sign-up-label">
+
+ 
+
+      <span id="auth-toggle-text">Don't have an account?</span><span class="sign-up-link" id="auth-toggle-link">Sign up</span>
+
+ 
+
+    </p>
+
+ 
+
+    <div class="buttons-container">
+
+ 
+
+      <div class="apple-login-button">
+
+ 
+
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" class="apple-icon" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+ 
+
+          <path d="M747.4 535.7c-.4-68.2 30.5-119.6 92.9-157.5-34.9-50-87.7-77.5-157.3-82.8-65.9-5.2-138 38.4-164.4 38.4-27.9 0-91.7-36.6-141.9-36.6C273.1 298.8 163 379.8 163 544.6c0 48.7 8.9 99 26.7 150.8 23.8 68.2 109.6 235.3 199.1 232.6 46.8-1.1 79.9-33.2 140.8-33.2 59.1 0 89.7 33.2 141.9 33.2 90.3-1.3 167.9-153.2 190.5-221.6-121.1-57.1-114.6-167.2-114.6-170.7zm-105.1-305c50.7-60.2 46.1-115 44.6-134.7-44.8 2.6-96.6 30.5-126.1 64.8-32.5 36.8-51.6 82.3-47.5 133.6 48.4 3.7 92.6-21.2 129-63.7z"></path>
+
+ 
+
+        </svg>
+
+ 
+
+        <span>Log in with Apple</span>
+
+ 
+
+      </div>
+
+ 
+
+      <div class="google-login-button" id="google-login-button">
+
+ 
+
+        <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px" class="google-icon" viewBox="0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+
+ 
+
+          <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
+
+ 
+
+  c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24
+
+ 
+
+  c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"></path>
+
+ 
+
+          <path fill="#FF3D00" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657
+
+ 
+
+  C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"></path>
+
+ 
+
+          <path fill="#4CAF50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36
+
+ 
+
+  c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"></path>
+
+ 
+
+          <path fill="#1976D2" d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571
+
+ 
+
+  c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"></path>
+
+ 
+
+        </svg>
+
+ 
+
+        <span>Log in with Google</span>
+
+ 
+
+      </div>
+
+ 
+
+    </div>
+
+ 
+
+   
+
+ 
+
+  </div>
+
+ 
+
+  <!-- Video Section -->
+
+  <div class="video-section">
+
+    <video width="100%" max-width="800px" controls autoplay loop muted style="border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);">
+
+      <source src="video/video1.mp4" type="video/mp4">
+
+      Your browser does not support the video tag.
+
+    </video>
+
+  </div>
+
+ 
+
+  <footer class="pro-footer">
+
+ 
+
+  <div class="footer-container">
+
+ 
+
+ 
+
+ 
+
+    <!-- Help Section -->
+
+ 
+
+    <div class="footer-col">
+
+ 
+
+      <h4>Help & Support</h4>
+
+ 
+
+      <a href="mailto:alvisdsouza5@gmail.com">📞Contact Support</a>
+
+ 
+
+      <a href="https://forms.yourdomain.com/report-issue">䷛Report an Issue</a>
+
+ 
+
+      <a href="/help/faq.html">☄️Troubleshooting</a>
+
+ 
+
+     <a href="faq.html">㉄FAQs</a>
+
+ 
+
+    </div>
+
+ 
+
+ 
+
+ 
+
+    <!-- Security Section -->
+
+ 
+
+    <div class="footer-col">
+
+ 
+
+      <h4>Security</h4>
+
+ 
+
+      <a href="encryption-details.html">Encryption Details</a>
+
+ 
+
+      <a href="security-practices.html">Security Practices</a>
+
+ 
+
+      <a href="responsible-disclosure.html">Responsible Disclosure</a>
+
+ 
+
+      <a href="system-status.html">System Status</a>
+
+ 
+
+    </div>
+
+ 
+
+ 
+
+ 
+
+    <!-- Company Section -->
+
+ 
+
+    <div class="footer-col">
+
+ 
+
+      <h4>Company</h4>
+
+ 
+
+      <a href="about-us.html">About Us</a>
+
+ 
+
+     
+
+ 
+
+      <a href="roadmap.html">Roadmap</a>
+
+ 
+
+    </div>
+
+ 
+
+ 
+
+ 
+
+    <!-- Legal Section -->
+
+ 
+
+    <div class="footer-col">
+
+ 
+
+      <h4>Legal</h4>
+
+ 
+
+      <a href="privacy-policy.html">Privacy Policy</a>
+
+ 
+
+      <a href="terms-and-conditions.html">Terms & Conditions</a>
+
+ 
+
+     
+
+ 
+
+      <a href="data-protection.html">Data Protection</a>
+
+ 
+
+    </div>
+
+ 
+
+ 
+
+ 
+
+    <!-- Newsletter Section -->
+
+ 
+
+    <div class="footer-col newsletter">
+
+ 
+
+      <h4>Newsletter</h4>
+
+ 
+
+      <p>Get security tips & product updates.</p>
+
+ 
+
+ 
+
+ 
+
+      <div class="newsletter-box">
+
+ 
+
+        <input type="email" placeholder="Enter your email" />
+
+ 
+
+        <button>Subscribe</button>
+
+ 
+
+      </div>
+
+ 
+
+ 
+
+ 
+
+      <label class="check">
+
+ 
+
+        <input type="checkbox">
+
+ 
+
+        I accept newsletter terms
+
+ 
+
+      </label>
+
+ 
+
+ 
+
+ 
+
+      <div class="social-icons">
+
+ 
+
+    <span>Follow us:</span>
+
+ 
+
+    <div class="social">
+
+ 
+
+        <a href="https://facebook.com/ChatifyApp" target="_blank">
+
+ 
+
+            <i class="ri-facebook-fill"></i>
+
+ 
+
+        </a>
+
+ 
+
+       
+
+ 
+
+        <a href="https://instagram.com/alvis.dsouza_" target="_blank">
+
+ 
+
+            <i class="ri-instagram-line"></i>
+
+ 
+
+        </a>
+
+ 
+
+       
+
+ 
+
+        <a href="https://youtube.com/ChatifyOfficial" target="_blank">
+
+ 
+
+            <i class="ri-youtube-fill"></i>
+
+ 
+
+        </a>
+
+ 
+
+    </div>
+
+ 
+
+</div>
+
+ 
+
+    </div>
+
+ 
+
+ 
+
+ 
+
+  </div>
+
+ 
+
+ 
+
+ 
+
+  <div class="footer-bottom">
+
+ 
+
+    © 2025 Chatify • Built with 🔐 End-to-End Encryption
+
+ 
+
+  </div>
+
+ 
+
+</footer>
+
+ 
+
+ 
+
+ 
+
+</div>
+
+ 
+
+ 
+
+ 
+
+<div id="chat-app" class="app">
+
+ 
+
+ 
+
+ 
+
+  <aside id="sidebar" class="sidebar">
+
+ 
+
+    <button class="close-sidebar-button" onclick="toggleSidebar()" title="Close Sidebar">
+
+ 
+
+      <i class="ri-close-line"></i>
+
+ 
+
+    </button>
+
+ 
+
+ 
+
+ 
+
+    <div>
+
+ 
+
+      <div class="sidebar-user-info">
+
+ 
+
+        <h1>Chatify</h1>
+
+ 
+
+        <button class="settings-button" onclick="openSettingsModal()">
+
+ 
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings">
+
+ 
+
+            <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.78 1.28a2 2 0 0 0 .73 2.73l.15.08a2 2 0 0 1 1 1.74v.44a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 0-.73 2.73l.78 1.28a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 1-1.74v.44a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l-.15.08a2 2 0 0 0 2.73-.73l.78-1.28a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/>
+
+ 
+
+          </svg>
+
+ 
+
+        </button>
+
+ 
+
+      </div>  
+
+ 
+
+ 
+
+ 
+
+      <div class="user-meta"><strong>My Username:</strong> <span id="my-username">Loading...</span></div>
+
+ 
+
+     
+
+ 
+
+      <div class="search-section">
+    <input id="search-username" type="text" placeholder="Search unique username..." />
+    <button class="sidebar-search-button" onclick="searchUser()">Search</button>
+</div>
+
+<style>
+/* Container spacing */
+.search-section {
+    display: flex;
+    gap: 8px; /* space between input and button */
+}
+
+/* Input styling */
+#search-username {
+    padding: 10px 15px;
+    border: 2px solid #ccc;
+    border-radius: 12px; /* rounded corners */
+    outline: none;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Blue highlight when input is focused */
+#search-username:focus {
+    border-color: #007bff; /* blue border */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6); /* blue glow */
+}
+
+/* Button styling */
+.sidebar-search-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 12px; /* same rounded corners */
+    cursor: pointer;
+    transition: box-shadow 0.3s, background-color 0.3s;
+}
+
+/* Blue glow on button click or focus */
+.sidebar-search-button:focus,
+.sidebar-search-button:active {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+    background-color: #0056b3; /* slightly darker blue on click */
+}
+</style>
+
+
+ 
+
+     
+
+ 
+
+      <h3 style="margin: 10px 0 0;">Recent Chats</h3>
+
+ 
+
+      <div id="recent-users-bar"></div>
+
+ 
+
+    </div>
+
+ 
+
+    <nav id="chat-list"></nav>
+
+ 
+
+  </aside>
+
+ 
+
+ 
+
+ 
+
+  <main class="main">
+
+ 
+
+    <div class="chat-container">
+
+ 
+
+      <div class="chat-header">
+
+ 
+
+        <button class="menu-toggle-button" onclick="toggleSidebar()">
+
+ 
+
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu">
+
+ 
+
+            <line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/>
+
+ 
+
+          </svg>
+
+ 
+
+        </button>
+
+ 
+
+ 
+
+ 
+
+        <div class="chat-header-info">
+
+          <div class="chat-photo-container" onclick="openProfilePictureModal()" style="cursor: pointer;" title="Click to view profile picture">
+
+            <img id="chat-photo" src="" alt="User" />
+
+            <span id="chat-header-status" class="status-dot offline" aria-hidden="true"></span>
+
+          </div>
+
+ 
+
+          <div>
+            <h2 id="chat-with">Select User</h2>
+            <p id="last-seen-text" style="margin: 4px 0 0 0; font-size: 12px; color: #999;"></p>
+          </div>
+
+          <button id="block-button" class="block-btn" onclick="toggleBlock()" style="margin-left:12px">Block</button>
+
+ 
+
+        </div>
+
+ 
+
+      </div>
+
+ 
+
+ 
+
+ 
+
+      <div id="messages" class="messages"></div>
+
+ 
+
+     
+
+ 
+
+      <div id="typing-indicator" class="typing-indicator" style="display: none;">
+
+ 
+
+        <span class="typing-dot"></span>
+
+ 
+
+        <span class="typing-dot"></span>
+
+ 
+
+        <span class="typing-dot"></span>
+
+ 
+
+      </div>
+
+ 
+
+ 
+
+ 
+
+      <div class="input-area">
+
+ 
+
+        <input type="text" id="message-input" placeholder="Type a message..." />
+
+ 
+
+        <!-- Image input: selecting an image stores it in sessionStorage as Base64 and shows a preview -->
+
+       <!--<input type="file" id="image-input" accept="image/*" style="margin-left:8px" />-->
+
+ 
+
+        <button id="send-button" onclick="sendMessage()">Send</button>
+
+ 
+
+        <button type="button" class="emoji-btn" onclick="toggleEmojiPicker()">😊</button>
+
+ 
+
+        <!-- Area to show pending image preview (if any) -->
+
+        <div id="pending-image-preview" style="display:none; margin-top:8px;"></div>
+
+ 
+
+      </div>
+
+ 
+
+    </div>
+
+ 
+
+  </main>
+
+ 
+
+</div>
+
+
+
+
+<div id="settings-modal" class="modal hidden">
+
+ 
+
+  <div class="modal-content">
+
+ 
+
+    <h2>Edit Profile</h2>
+
+ 
+
+ 
+
+ 
+
+    <div class="profile-photo-preview">
+
+ 
+
+        <!-- Profile Photo -->
+
+ 
+
+        <img
+
+ 
+
+          id="current-profile-photo"
+
+ 
+
+          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+
+ 
+
+          alt="Profile Photo"
+
+ 
+
+          style="width:100px;height:100px;border-radius:50%;object-fit:cover;"
+
+ 
+
+        />
+
+ 
+
+ 
+
+ 
+
+        <label for="upload-profile-photo">Upload New Profile Photo:</label>
+
+ 
+
+        <input type="file" id="upload-profile-photo" accept="image/*" />
+
+ 
+
+ 
+
+ 
+
+        <!-- REMOVE PHOTO BUTTON -->
+
+ 
+
+        <button id="remove-photo-btn" onclick="removeProfilePhoto()"
+
+ 
+
+          style="
+
+ 
+
+            margin-top: 10px;
+
+ 
+
+            background: #ff4d4d;
+
+ 
+
+            color: white;
+
+ 
+
+            border: none;
+
+ 
+
+            padding: 8px 14px;
+
+ 
+
+            border-radius: 5px;
+
+ 
+
+            cursor: pointer;
+
+ 
+
+            width: 150px;
+
+ 
+
+        ">
+
+ 
+
+          Remove Photo
+
+ 
+
+        </button>
+
+ 
+
+ 
+
+ 
+
+        <small style="color: #666; text-align: center; margin-top: 5px;">
+
+ 
+
+            (Leave blank to keep current photo)
+
+ 
+
+        </small>
+
+ 
+
+    </div>
+
+ 
+
+   
+
+ 
+
+    <label for="edit-username">Unique Username:</label>
+
+ 
+
+    <input type="text" id="edit-username" placeholder="@your_unique_name" />
+
+ 
+
+ 
+
+ 
+
+    <label for="edit-name">Display Name:</label>
+
+ 
+
+    <input type="text" id="edit-name" placeholder="Your Name" />
+
+ 
+
+ 
+
+ 
+
+    <label for="edit-photo-url-manual">Or paste a direct image URL (e.g., from Imgur/Cloudinary):</label>
+
+ 
+
+    <input type="text" id="edit-photo-url-manual" placeholder="https://example.com/your-photo.jpg" />
+
+ 
+
+ 
+
+ 
+
+    <small style="color: #666; text-align: center; margin-top: 5px;">
+
+ 
+
+        (Overrides file upload if both are provided)
+
+ 
+
+    </small>
+
+ 
+
+ 
+
+ 
+
+    <div class="modal-buttons">
+
+ 
+
+      <button class="cancel-button" onclick="closeSettingsModal()">Cancel</button>
+
+ 
+
+      <button class="save-button" onclick="saveProfileChanges()">Save Changes</button>
+
+ 
+
+    </div>
+
+ 
+
+ 
+
+ 
+
+    <button class="modal-logout-button" onclick="signOut()">Logout</button>
+
+ 
+
+  </div>
+
+ 
+
+</div>
+
+ 
+
+ 
+
+ 
+
+<div id="unlock-key-modal" class="modal hidden">
+
+ 
+
+  <div class="modal-content">
+
+ 
+
+    <h2>🔒 Unlock Your Messages</h2>
+
+ 
+
+    <p>Please enter your login password to unlock your encrypted private key and view messages.</p>
+
+ 
+
+    <input type="password" id="key-password-input" placeholder="Your Password" style="width: 100%; padding: 10px; box-sizing: border-box; border-radius: 6px;" />
+
+ 
+
+    <small style="color: #ef4444; text-align: center; margin-top: 5px;" id="key-unlock-error"></small>
+
+ 
+
+    <div class="modal-buttons" style="justify-content: center;">
+
+ 
+
+      <button class="save-button" onclick="attemptKeyUnlockFromModal()">Unlock</button>
+
+ 
+
+      <button class="cancel-button" onclick="signOut()">Logout</button>
+
+ 
+
+    </div>
+
+ 
+
+  </div>
+
+ 
+
+</div>
+
+ 
+
+<div id="emoji-picker" class="emoji-picker hidden"></div>
+
+ 
+
+<!-- Profile Picture Modal -->
+
+<div id="profile-picture-modal" class="modal hidden">
+
+  <div class="modal-content profile-picture-modal-content">
+
+    <button class="modal-close-btn" onclick="closeProfilePictureModal()" style="position: absolute; top: 10px; right: 10px; background: none; border: none; font-size: 24px; cursor: pointer;">&times;</button>
+
+    <img id="profile-picture-large" src="" alt="Profile Picture" style="width: 100%; max-width: 500px; border-radius: 12px; object-fit: contain;" />
+
+    <p id="profile-picture-name" style="margin-top: 20px; text-align: center; font-size: 18px; font-weight: 600;"></p>
+
+  </div>
+
+</div>
+
+
+
+
+
+
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+
+ 
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+
+ 
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+ 
+
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+
+ 
+
+<script src="index.js"></script>
+
+ 
+
+<script src="ai.js"></script>
+
+ 
+
+ 
+
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/toxicity"></script>
+
+ 
+
+<body onload="loadToxicityModel()">
+
+ 
+
+<script src="https://cdn.jsdelivr.net/npm/emoji-mart@latest/dist/browser.js"></script>
+
+
+
+<script type="text/javascript">
+  // Load Tawk.to ONLY on login page
+  if (document.getElementById('login-page')) {
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+      var s1=document.createElement("script"),
+          s0=document.getElementsByTagName("script")[0];
+      s1.async=true;
+      s1.src='https://embed.tawk.to/6997194addcf5d1c36b2ec12/1jhr3lj1q';
+      s1.charset='UTF-8';
+      s1.setAttribute('crossorigin','*');
+      s0.parentNode.insertBefore(s1,s0);
+    })();
+
+    // OPTIONAL: force it to a fixed position after it loads
+    Tawk_API.onLoad = function() {
+      var iframe = document.querySelector('iframe[src*="tawk.to"]');
+      if (iframe) {
+        iframe.style.position = 'fixed';      // fixed positioning
+        iframe.style.bottom = '20px';         // distance from bottom
+        iframe.style.right = '20px';          // distance from right
+        iframe.style.zIndex = '9999';         // stay on top
+      }
+    };
+  }
+</script>
+
+
+</body>
+
+ 
+
+</html>
+
+ 
+
+ 
+
+ 

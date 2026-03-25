@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>System Status | Chatify</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css"> 
+
+  <style>
+    /* Status page specific styling */
+    .status-wrapper {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      min-height: 80vh; /* Ensure it looks good even when content is short */
+    }
+    .status-wrapper h1 {
+      color: #2563eb;
+      margin-bottom: 20px;
+    }
+    .status-indicator {
+      font-size: 24px;
+      font-weight: 700;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 30px 0;
+      display: inline-block;
+      width: 80%;
+    }
+    .status-ok {
+      background-color: #d1fae5; /* Light green */
+      color: #047857; /* Dark green */
+    }
+    .component-list {
+      text-align: left;
+      margin-top: 30px;
+    }
+    .component-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 16px;
+    }
+    .component-status {
+      font-weight: 600;
+      color: #047857; /* Green for operational */
+    }
+    /* Responsive adjustment */
+    @media (max-width: 620px) {
+        .status-indicator {
+            width: 95%;
+        }
+        .status-wrapper {
+            margin: 20px 10px;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="status-wrapper">
+
+    <h1>☁️ Chatify System Status</h1>
+
+    <div class="status-indicator status-ok">
+      All Systems Operational
+    </div>
+    
+    <p>Last Updated: November 23, 2025 at 10:30 PM IST</p>
+
+    <div class="component-list">
+      <div class="component-item">
+        <span>Messaging Service (E2EE)</span>
+        <span class="component-status">Operational</span>
+      </div>
+      <div class="component-item">
+        <span>User Authentication & Login</span>
+        <span class="component-status">Operational</span>
+      </div>
+      <div class="component-item">
+        <span>File Storage & Transfer</span>
+        <span class="component-status">Operational</span>
+      </div>
+      <div class="component-item">
+        <span>API & Backend Services</span>
+        <span class="component-status">Operational</span>
+      </div>
+    </div>
+    
+    <p style="margin-top: 40px; font-size: 14px;">
+        For historic data or planned maintenance, please check our <a href="#">Status Page Archive</a>.
+    </p>
+
+  </div>
+  </body>
+</html>
